@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/bfc87244b9.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>ShareBox</title>
 </head>
 
 <body>
+    <div class="logo"></div>
     <section class="upload">
         <div class="drop-zone">
             <div class="icons">
@@ -43,21 +45,24 @@
 
             <p>Or Send Via Email</p>
             <div class="email-container">
-                <form>
+                <form id="email-form">
                     <div class="field">
                         <label for="sender">Your email</label>
-                        <input type="email" required name="form-email" id="sender">
+                        <input type="email" required name="from-email" id="sender">
                     </div>
                     <div class="field">
                         <label for="receiver">Receiver's email</label>
                         <input type="email" required name="to-email" id="receiver">
                     </div>
+                    <button type="submit">Send</button>
 
                 </form>
             </div>
         </div>
     </section>
 
+    <div class="toast">kjdgfdg</div>
+<div class="upload-vector"></div>
     <script src="script.js"></script>
 </body>
 
