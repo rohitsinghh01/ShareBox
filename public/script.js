@@ -11,9 +11,9 @@ const copyBtn = document.querySelector("#copy-btn");
 const emailForm = document.querySelector("#email-form");
 const toast = document.querySelector(".toast");
 
-const host = "https://inshare.herokuapp.com/";
-const uploadURL = `${host}api/files`;
-const emailURL = `${host}api/files/send`;
+const host = "http://localhost:8000/";
+const uploadURL = `${host}api/v1/files`;
+const emailURL = `${host}api/v1/files/send`;
 const maxAllowedSize = 100 * 1024 * 1024;
 
 dropZone.addEventListener("dragover", (e) => {
@@ -70,6 +70,7 @@ const uploadFile = () => {
   xhr.onreadystatechange = () => {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       console.log(xhr.response);
+      onUploadSuccess(xhr.responseText);
     }
   };
   xhr.upload.onprogress = updateProgress;
@@ -90,10 +91,11 @@ const updateProgress = (e) => {
   progressBar.style.transform = `scaleX(${percent / 100})`;
 };
 
-const onUploadSuccess = ({ file: url }) => {
+const onUploadSuccess = (res) => {
   resetFileInput();
   emailForm[2].removeAttribute("disabled");
   progressContainer.style.display = "none";
+  const { file: url } = JSON.parse(res);
   sharingContainer.style.display = "block";
   fileUrl.value = url;
 };

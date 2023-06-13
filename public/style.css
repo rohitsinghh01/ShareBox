@@ -30,8 +30,8 @@ body {
   height: 40vh;
   width: 40vw;
   position: absolute;
-  top: -10%;
-  left: -7%;
+  top: -13%;
+  left: -4%;
 
 }
 
@@ -145,8 +145,12 @@ body {
   margin-bottom: 20px;
 }
 
-.share-container .inner-container {
+.share-container .input-container {
+  display: flex;
   position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+
 }
 .share-container .input-container input {
   width: 100%;
@@ -158,12 +162,14 @@ body {
   background: #f5fcff;
   color: #0000008c;
 }
-
-.input-container .copy {
+.share-container img {
+  height: 22px;
+  width: 30px;
   position: absolute;
-  right: 258px;
-  top: 434px;
+  right: 7px;
+  top: 12px;
   cursor: pointer;
+  background: #f5fcff;
 }
 p {
   opacity: 0.7;
@@ -289,5 +295,9 @@ section.download {
   .email-container .field{
     flex-direction: column;
     width: 300px;
+  }
+  .logo{
+    left: -3%;
+    top: -15%;
   }
 }
